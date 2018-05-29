@@ -1,8 +1,8 @@
-[pyapidoc][]
+pyapidoc
 ===================
 
 
-[![Python Versions][pyversion-button]][md-pypi]
+[![Python Versions][pyversion-button]]
 
 [pyversion-button]: http://img.shields.io/pypi/pyversions/Markdown.svg
 
@@ -11,3 +11,4 @@
 
 Documentation
 -------------
+
