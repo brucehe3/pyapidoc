@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """
 将特定注释转换为指定格式，以便友好化访问
 ===========================================================================
@@ -5,9 +7,7 @@
 @Date  2018-05-29
 @Version 0.1
 """
-
 import os
-import sys
 import re
 import argparse
 
@@ -25,13 +25,13 @@ class MDGenerator:
     def title(self, text, font_size=1):
         """
         返回标题
-        :param name:
+        :param text:
         :param font_size: 1-5 对应 1-5号标题
         :return:
         """
         if font_size not in (1,2,3,4,5,):
             raise AttributeError('字号大小不正确')
-        return '#' * font_size + text
+        return '#' * font_size + ' ' + text
 
     def bold(self, text):
 
@@ -68,7 +68,7 @@ class MDGenerator:
         length = len(title)
 
         if not alignment:
-            alignment = [':--'] * length
+            alignment = [':---'] * length
         # 字段长度要保持一致
         output = [' | '.join(title), ' | '.join(alignment)]
         for d in data:
@@ -331,7 +331,7 @@ class Doc:
                 # 转为api md 文档
                 _output.extend(self.format_api_doc(api_data))
 
-        content = os.linesep.join(_output)
+        content = (os.linesep*2).join(_output)
 
         with open(dest,'+w') as f:
             f.write(content)
@@ -355,6 +355,7 @@ class Doc:
         # _output.append(generator.newline())
         _output.append('%s %s' % (generator.bold('请求地址：'), api_data['apipath']))
         _output.append('%s %s' % (generator.bold('请求方式：'), api_data['method']))
+
         # 参数表
         _table_data = {
             'title': ['变量名', '类型', '描述'],
@@ -376,7 +377,7 @@ if __name__ == '__main__':
     """
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('dest', nargs='?', default='', help="指定生成的文件地址 如：app/api.md")
-    parser.add_argument('-p', '--path', default='../app', help="指定扫描的代码目录，默认为app目录")
+    parser.add_argument('-p', '--path', default='./', help="指定扫描的代码目录，默认为当前目录")
     parser.add_argument('-f', '--force', action="store_true", help="是否覆盖存在的md文件")
 
     args = parser.parse_args()
