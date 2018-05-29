@@ -323,6 +323,10 @@ class Doc:
         if not override and os.path.isfile(dest):
             raise ValueError('%s is exist.' % dest)
 
+        path, filename = os.path.split(dest)
+        if not os.path.exists(path):
+            os.makedirs(path)
+
         parsed_list = self.parsed_list
         _output = list()
 
