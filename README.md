@@ -7,6 +7,12 @@ Author: Bruce He <hebin@comteck.cn>
 
 Version: `0.1`
 
+Todo
+-------------
+* 优化返回的格式
+* 支持其他格式输出
+* 支持其他语言
+
 Requirements
 -------------
 * Python(2.7,3.4,3.5,3.6)
