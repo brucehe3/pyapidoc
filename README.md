@@ -114,10 +114,14 @@ python pyapidoc.py -p app/ api.md
 
 **请求地址：** /api/aaa/bbb/
 **请求方式：** POST
-变量名 | 类型 | 描述
-:-- | :-- | :--
-code | string | 代码
-name | string | 姓名
+
+
+| header 1 | header 2 |
+| -------- | -------- |
+| cell 1   | cell 2   |
+| cell 3   | cell 4   |
+
+
 **返回参数：**
 ```
 {'code':'0','msg':'success','data':[]}
