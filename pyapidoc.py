@@ -394,6 +394,6 @@ if __name__ == '__main__':
     try:
         doc = Doc(path)
         if doc.output(dest, force):
-            print('Succeed to save %s' % dest)
+            print('Succeed in saving %s' % dest)
     except Exception as e:
         print('Warning: %s' % str(e))
