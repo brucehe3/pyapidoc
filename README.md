@@ -109,22 +109,21 @@ python pyapidoc.py -p app/ api.md
 
 #### 输出的内容
 
-
 ## api演示接口
 
 > 用于说明如何注释的api接口
 
 
-** 请求地址： ** /api/aaa/bbb/
+**请求地址：** /api/aaa/bbb/
 
-** 请求方式： ** POST
+**请求方式：** POST
 
 变量名 | 类型 | 描述
 :--- | :--- | :---
 code | string | 代码
 name | string | 姓名
 
-** 返回参数： **
+**返回参数：**
 
 ```
 {'code':'0','msg':'success','data':[]}
@@ -137,16 +136,16 @@ name | string | 姓名
 > 用于说明如何注释的api接口
 
 
-** 请求地址： ** /api/aaa/ccc/
+**请求地址：** /api/aaa/ccc/
 
-** 请求方式： ** POST
+**请求方式：** POST
 
 变量名 | 类型 | 描述
 :--- | :--- | :---
 code | string | 代码
 name | string | 姓名
 
-** 返回参数： **
+**返回参数：**
 
 ```
  msg: 返回消息 <string>
