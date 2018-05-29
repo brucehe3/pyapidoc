@@ -333,7 +333,7 @@ class Doc:
 
         content = (os.linesep*2).join(_output)
 
-        with open(dest,'+w') as f:
+        with open(dest,'w') as f:
             f.write(content)
 
         return True
