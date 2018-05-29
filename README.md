@@ -26,7 +26,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -p PATH, --path PATH  指定扫描的代码目录，默认为app目录
+  -p PATH, --path PATH  指定扫描的代码目录，默认为当期目录
   -f, --force           是否覆盖存在的md文件
 
 ```
@@ -109,6 +109,7 @@ python pyapidoc.py -p app/ api.md
 
 #### 输出的内容
 
+
 ## api演示接口
 
 > 用于说明如何注释的api接口
@@ -127,6 +128,34 @@ name | string | 姓名
 
 ```
 {'code':'0','msg':'success','data':[]}
+```
+
+---
+
+## api演示接口2
+
+> 用于说明如何注释的api接口
+
+
+** 请求地址： ** /api/aaa/ccc/
+
+** 请求方式： ** POST
+
+变量名 | 类型 | 描述
+:--- | :--- | :---
+code | string | 代码
+name | string | 姓名
+
+** 返回参数： **
+
+```
+ msg: 返回消息 <string>
+ code: 返回编码 <string>
+ data: 返回值 <list>
+     id: <integer>
+     code: 编码 <string>
+     created_at: 采购时间 <string>
+
 ```
 
 ---
