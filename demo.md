@@ -14,7 +14,7 @@ name | string | 姓名
 
 **返回参数：**
 
-```
+```javascript
 {'code':'0','msg':'success','data':[]}
 ```
 
@@ -36,7 +36,7 @@ name | string | 姓名
 
 **返回参数：**
 
-```
+```javascript
  msg: 返回消息 <string>
  code: 返回编码 <string>
  data: 返回值 <list>
