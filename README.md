@@ -50,7 +50,7 @@ python pyapidoc.py -p app/ api.md
 ### 可用的注释变量
 
 **@apidoc** 
-起始符，所有需要转换的注释都以开始
+起始符，所有需要转换的注释都以此开始
 
 **@name** 
 接口名称
@@ -112,7 +112,7 @@ python pyapidoc.py -p app/ api.md
 
 ```
 
-#### 输出的内容
+#### 输出的MD文档
 
 见 [demo.md][demo]
 
