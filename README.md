@@ -39,7 +39,7 @@ python pyapidoc.py api.md
 ```
 
 
-将指定目录下所有PHP文档中 符合注释规范的内容转为api.md文档
+将指定目录`app`下所有PHP文档中 符合注释规范的内容转为api.md文档
 ```
 python pyapidoc.py -p app/ api.md
 
@@ -106,3 +106,20 @@ python pyapidoc.py -p app/ api.md
     ...
 
 ```
+
+#### 输出的内容
+
+##api演示接口
+> 用于说明如何注释的api接口
+
+**请求地址：** /api/aaa/bbb/
+**请求方式：** POST
+变量名 | 类型 | 描述
+:-- | :-- | :--
+code | string | 代码
+name | string | 姓名
+**返回参数：**
+```
+{'code':'0','msg':'success','data':[]}
+```
+---
