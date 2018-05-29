@@ -111,4 +111,4 @@ python pyapidoc.py -p app/ api.md
 
 见 [demo.md][demo]
 
-[demo] https://github.com/brucehe3/pyapidoc/blob/master/demo.md
+[demo]: https://github.com/brucehe3/pyapidoc/blob/master/demo.md
