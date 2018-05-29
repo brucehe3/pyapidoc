@@ -55,6 +55,9 @@ python pyapidoc.py -p app/ api.md
 **@name** 
 接口名称
 
+**@path**
+接口地址及方式  方式可以是`POST`,`GET`,`DELETE`,`PUT`,`PATCH`
+
 **@author**
 接口开发者名称
 
@@ -75,6 +78,7 @@ python pyapidoc.py -p app/ api.md
     /**
      * @apidoc
      * @name [接口名称]
+     * @path [接口地址] [方式]
      * @desc [接口描述]
      * @author [开发者]
      * @param  [变量名1] [变量类型] [变量说明]
@@ -96,6 +100,7 @@ python pyapidoc.py -p app/ api.md
     /**
      * @apidoc
      * @name [接口名称]
+     * @path [接口地址] [方式]
      * @desc [接口描述]
      * @author [开发者]
      * @param  [变量名1] [变量类型] [变量说明]
