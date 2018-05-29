@@ -353,8 +353,8 @@ class Doc:
         # 接口描述
         _output.append(generator.comment(api_data['desc']))
         # _output.append(generator.newline())
-        _output.append('%s %s' % (generator.bold('请求地址：'), api_data['apipath']))
-        _output.append('%s %s' % (generator.bold('请求方式：'), api_data['method']))
+        _output.append('%s %s' % (generator.bold('请求地址：'), generator.highline(api_data['apipath'])))
+        _output.append('%s %s' % (generator.bold('请求方式：'), generator.highline(api_data['method'])))
 
         # 参数表
         _table_data = {
@@ -364,7 +364,7 @@ class Doc:
         _output.append(generator.table(**_table_data))
         # 返回参数
         _output.append(generator.bold('返回参数：'))
-        _output.append(generator.code(api_data['return']))
+        _output.append(generator.code(api_data['return'], 'javascript'))
         _output.append(generator.newline())
 
         return _output
