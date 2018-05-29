@@ -3,6 +3,9 @@ pyapidoc
 
 自文档化工具，将注释转为markdown文档
 
+Author: Bruce He <hebin@comteck.cn>
+
+Version: 0.1
 
 Requirements
 -------------
@@ -14,6 +17,35 @@ Installation
 
 Documentation
 -------------
+
+### 使用方式
+```
+usage: pyapidoc.py [-h] [-p PATH] [-f] [dest]
+positional arguments:
+  dest                  指定生成的文件地址 如：app/api.md
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PATH, --path PATH  指定扫描的代码目录，默认为app目录
+  -f, --force           是否覆盖存在的md文件
+
+```
+
+
+将当前目录下所有PHP文档中 符合注释规范的内容转为api.md文档
+```
+python pyapidoc.py api.md
+
+```
+
+
+将指定目录下所有PHP文档中 符合注释规范的内容转为api.md文档
+```
+python pyapidoc.py -p app/ api.md
+
+```
+
+
 
 ### 可用的注释变量
 
