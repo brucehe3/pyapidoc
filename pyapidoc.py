@@ -61,9 +61,9 @@ class MDGenerator:
         data = kwargs.get('data')
 
         if not isinstance(data, list) or not isinstance(title, list):
-            raise TypeError('参数类型有误')
+            raise TypeError('param format is error')
         if not data or not title:
-            raise AttributeError('参数不正确')
+            raise AttributeError('param is empty')
 
         length = len(title)
 
@@ -123,10 +123,10 @@ class Doc:
         :return: 
         """
         if not os.path.exists(self.root_path):
-            raise AttributeError('路径不存在')
+            raise AttributeError('The path is not found.')
         
         if not os.path.isdir(self.root_path):
-            raise AttributeError('必须是一个目录')
+            raise AttributeError('The path should be a folder.')
         
         for dirpath, dirname, filenames in os.walk(self.root_path):
             for filename in filenames:
@@ -155,7 +155,7 @@ class Doc:
         :return: 
         """
         if not self.docs:
-            raise AttributeError('没有找到需要解析的文档')
+            raise AttributeError('No need files to process.')
 
         pattern = re.compile("\/\*\*\s*?\*\s*?@apidoc([\s\S]*?)\*\/")
 
@@ -168,7 +168,8 @@ class Doc:
                     if results:
                         self.add_parsed_list(doc_name, self.parse(doc_name, results))
                 except UnicodeDecodeError:
-                    print(doc_name, '编码有误，跳过...')
+                    pass
+                    # print(doc_name, '编码有误，跳过...')
                 except AttributeError as e:
                     print(doc_name, str(e))
 
@@ -238,7 +239,7 @@ class Doc:
         # 只返回第一条
         method = methods[0].upper().strip()
         if method not in valid_methods:
-            raise AttributeError('method参数有误，应该是如下之一：%s' % str(valid_methods))
+            raise AttributeError('param method should be one of %s' % str(valid_methods))
 
         return method
 
@@ -270,7 +271,7 @@ class Doc:
         """
         paths = self.path_pattern.findall(result)
         if not paths:
-            raise AttributeError('api地址未提供')
+            raise AttributeError('param path is required')
         
         path = paths[0].split()
 
@@ -281,7 +282,7 @@ class Doc:
         # 只返回第一条
         method = path[1].upper().strip()
         if method not in valid_methods:
-            raise AttributeError('method参数有误，应该是如下之一：%s' % str(valid_methods))
+            raise AttributeError('param method should be one of %s' % str(valid_methods))
 
         return path[0], method
 
@@ -307,7 +308,7 @@ class Doc:
         """
         name = self.name_pattern.findall(result)
         if not name:
-            raise AttributeError('接口名称未定义')
+            raise AttributeError('api name is required.')
 
         return name[0].strip()
 
@@ -320,7 +321,7 @@ class Doc:
         """
 
         if not override and os.path.isfile(dest):
-            raise ValueError('文件已存在')
+            raise ValueError('%s is exist.' % dest)
 
         parsed_list = self.parsed_list
         _output = list()
@@ -390,6 +391,9 @@ if __name__ == '__main__':
         parser.print_help()
         exit()
 
-    doc = Doc(path)
-    if doc.output(dest, force):
-        print(dest, '保存成功')
+    try:
+        doc = Doc(path)
+        if doc.output(dest, force):
+            print('Succeed to save %s' % dest)
+    except Exception as e:
+        print('Warning: %s' % str(e))
