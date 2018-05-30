@@ -64,6 +64,9 @@ python pyapidoc.py -p app/ api.md
 **@path**
 接口地址及方式  方式可以是`POST`,`GET`,`DELETE`,`PUT`,`PATCH`
 
+**@desc**
+接口用途描述
+
 **@author**
 接口开发者名称
 
