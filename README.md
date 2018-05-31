@@ -5,7 +5,7 @@ pyapidoc
 
 Author: Bruce He <hebin@comteck.cn>
 
-Version: `0.1`
+Version: `0.2`
 
 Todo
 -------------
