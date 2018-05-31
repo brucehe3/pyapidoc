@@ -324,7 +324,7 @@ class Doc:
             raise ValueError('%s is exist.' % dest)
 
         path, filename = os.path.split(dest)
-        if not os.path.exists(path):
+        if path and not os.path.exists(path):
             os.makedirs(path)
 
         parsed_list = self.parsed_list
